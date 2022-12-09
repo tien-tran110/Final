@@ -1,0 +1,12 @@
+batdau
+t a;
+a = 21;
+t b;
+b = 22; 
+neu (a << b){
+    b = b -1;
+}
+khongthi{
+    a = a -1;
+}
+ketthuc

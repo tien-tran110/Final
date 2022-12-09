@@ -1,0 +1,139 @@
+
+5. Selection Statement: The selection statement evaluates an expression and execute a certain code block 
+depending on the result of the expression. The denotational semantics of the selection statement is defined as a 
+mapping from a boolean expression to a set of instructions. The expression is evaluated and the set of instructions 
+is executed depending on the result of the evaluation.
+
+
+6. Loop Statement: 
+The loop statement executes a certain code block multiple times. 
+The denotational semantics of the loop statement is defined as a mapping from a boolean expression to a set of instructions. 
+The loop statement evaluates the expression and executes the instructions in the code block if the expression is true. 
+The loop statement will continue to evaluate the expression and execute the instructions in the code block until the expression returns false.
+
+
+7. Expr Statement: 
+The expr statement evaluates an expression and return a value as the result. 
+The denotational semantics of the expr statement is defined as a mapping from a set of operations to a value. 
+The expr statement evaluates the operations and returns a value as the result of the evaluation.
+
+
+8. Expr Statement (Boolean): 
+The expr statement can be modified to return a boolean solution. 
+The denotational semantics of the expr statement is defined as a mapping from a set of operations to a boolean value. 
+The expr statement evaluates the operations and returns a boolean value as the result of the evaluation.
+
+
+ 
+
+9. Attribute Grammar:
+
+Assignment Statement:
+
+String + String -> Concatenate
+
+String Natural -> Repeat
+
+bool Natural -> Assign
+
+Natural bool -> Assign
+
+char Natural -> Assign
+
+Natural char -> Assign
+
+Natural Real -> Assign
+
+No other types -> Error
+
+Divide by zero -> Error
+
+Modulo by zero -> Error
+
+
+ 
+
+10. Syntactically Valid Assignment Statements:
+
+Statement 1: num = 3 * (4 + num1 - 1);
+
+Semantic Rule Result: Pass
+
+
+ 
+
+Statement 2: d =2/a-1;
+
+Semantic Rule Result: Pass
+
+
+ 
+
+Statement 3: x = x + 2^2;
+
+Semantic Rule Result: Pass
+
+
+ 
+
+11. Axiomatic Semantics:
+
+a: a = 2* (b-1)-1 {a > 0}
+=> 2* (b-1)-1 > 0
+=> b > 3/2
+
+Weakest Precondition: b > 0
+
+
+ 
+
+b: if (x < y)
+
+x = y + 1
+
+else
+
+x = 3*x
+
+{x < 0}
+=> y + 1 < 0 => y < -1
+{x < 0}
+=> 3*x < 0 => x < 0
+
+Weakest Precondition: x < 0 and y < -1
+
+
+ 
+
+c:  y=a* 2* (b-1)-1
+
+if (x <y)
+
+x = y + 1
+
+else
+
+x = 3* x
+
+{x < 0}
+=> y + 1 < 0 => y < -1
+=> a* 2* (b-1)-1 < -1
+=> a*(b-1) < 0
+
+{x < 0}
+3* x < 0 => x < 0
+
+Weakest Precondition: x < 0, y < -1, and a > 0, b < 0
+
+
+ 
+
+d: a = 3 * (2 * b + a);
+
+b=2*a-1
+
+{b > 5}
+2*a-1 > 5 => a > 3
+3 * (2 * b + a) > 3  
+
+Weakest Precondition: a > 0, b > 0
